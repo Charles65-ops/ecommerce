@@ -2,9 +2,11 @@ package com.charada.ecommerce.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
 import java.util.Set;
+@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "tb_category")
@@ -17,5 +19,11 @@ public class Category {
 
     @ManyToMany (mappedBy = "categories")
     private Set<Product> products = new HashSet<>();
+
+    public Category(Long id, String name) {
+        this.id = id;
+        this.name = name;
+        this.products = new HashSet<>();
+    }
 
 }

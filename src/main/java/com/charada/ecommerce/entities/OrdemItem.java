@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "tb_order_item")
-public class OrderItem {
+public class OrdemItem {
     @EmbeddedId
     private OrderItemPK id = new OrderItemPK();
 
